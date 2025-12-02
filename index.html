@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chambliss Group International - Security and Prosperity</title>
+    <!-- Load Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font and scroll behavior */
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #f0f4f8; /* Light blue-gray background */
+        }
+        /* Gradient for the Hero section */
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0c4a6e 100%); /* Deeper Indigo to Blue */
+        }
+        /* Custom scrollbar for aesthetics */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #e2e8f0; }
+        ::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #2563eb; }
+
+        /* Media query to manage main content shift on desktop */
+        @media (min-width: 1024px) {
+            #main-content {
+                margin-left: 20rem; /* Space for the 80-unit (320px) sidebar */
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- 1. Mobile Header (Visible below lg breakpoint) -->
+    <header class="lg:hidden fixed top-0 left-0 w-full bg-indigo-700 shadow-xl z-50 p-4 flex justify-between items-center">
+        <!-- Logo: Shield/Growth Icon + Text -->
+        <a href="#home" class="text-2xl font-bold text-white tracking-tight flex items-center space-x-2">
+            <!-- SVG Icon representing Security and Growth -->
+            <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2l4-4m5.618-4.103A.986.986 0 0020 4a.986.986 0 00-.916-2.103M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <span>Chambliss <span class="text-yellow-400">Intl.</span></span>
+        </a>
+        <button id="menu-button" class="text-white hover:text-yellow-400 focus:outline-none" aria-label="Toggle Menu">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        </button>
+    </header>
+
+    <!-- 2. Fixed Sidebar Navigation (Desktop) -->
+    <aside id="sidebar" class="fixed inset-y-0 left-0 transform -translate-x-full lg:translate-x-0 transition duration-300 ease-in-out lg:w-80 w-64 bg-gray-900 text-white z-40 shadow-2xl">
+        <div class="p-8 border-b border-indigo-700">
+            <!-- Sidebar Logo Area -->
+            <div class="flex items-center space-x-3">
+                <!-- SVG Icon representing Security and Growth (The Group's dual mission) -->
+                <svg class="w-8 h-8 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2l4-4m5.618-4.103A.986.986 0 0020 4a.986.986 0 00-.916-2.103M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <h1 class="text-3xl font-extrabold text-white tracking-wider">CHAMBLISS</h1>
+            </div>
+            <p class="text-xs text-gray-400 mt-2 ml-11 uppercase font-medium">Group International</p>
+        </div>
+
+        <!-- Sidebar Navigation Links -->
+        <nav class="p-4 space-y-2 text-lg font-medium">
+            <a href="#home" class="sidebar-link block p-3 rounded-lg hover:bg-indigo-700 transition duration-150 flex items-center bg-indigo-800">
+                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7l7 7m0 0v10a1 1 0 01-1 1h-6a1 1 0 01-1-1v-4a1 1 0 00-1-1h-2a1 1 0 00-1 1v4a1 1 0 01-1 1H4a1 1 0 01-1-1V12z"></path></svg>
+                Home
+            </a>
+            <a href="#about" class="sidebar-link block p-3 rounded-lg hover:bg-indigo-700 transition duration-150 flex items-center">
+                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                About Us
+            </a>
+            <a href="#team" class="sidebar-link block p-3 rounded-lg hover:bg-indigo-700 transition duration-150 flex items-center">
+                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.653.284-1.27.781-1.74M7 20v-2c0-.653.284-1.27.781-1.74M9 14a6 6 0 016 0M10 7a2 2 0 114 0 2 2 0 01-4 0z"></path></svg>
+                Our Team (Leadership)
+            </a>
+            <a href="#pillars" class="sidebar-link block p-3 rounded-lg hover:bg-indigo-700 transition duration-150 flex items-center">
+                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10a2 2 0 002 2h12a2 2 0 002-2V9a2 2 0 00-2-2h-1a2 2 0 00-2 2v1m0 0h-2"></path></svg>
+                Our Pillars (MFI & Security)
+            </a>
+            <a href="#contact" class="sidebar-link block p-3 rounded-lg hover:bg-indigo-700 transition duration-150 flex items-center">
+                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.842 5.244a2 2 0 002.316 0L21 8m-2 1h1.5a2 2 0 012 2v8a2 2 0 01-2 2H4.5a2 2 0 01-2-2V11a2 2 0 012-2H3"></path></svg>
+                Contact Us
+            </a>
+        </nav>
+    </aside>
+    
+    <!-- Backdrop for Mobile Menu (Click to close) -->
+    <div id="backdrop" class="fixed inset-0 bg-black opacity-0 lg:hidden pointer-events-none transition-opacity duration-300 z-30"></div>
+
+    <!-- 3. Main Content Area -->
+    <div id="main-content" class="transition-all duration-300 pt-16 lg:pt-0 min-h-screen">
+        
+        <!-- Home Section (Hero) -->
+        <section id="home" class="hero-gradient text-white py-24 sm:py-32 lg:py-48">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl sm:text-6xl font-extrabold mb-4 leading-tight">
+                    Securing Futures, <span class="text-yellow-400">Empowering Growth.</span>
+                </h1>
+                <p class="text-xl sm:text-2xl font-light max-w-2xl mx-auto mb-8">
+                    A Diversified Group, A Unified Mission: We build bridges to opportunity while ensuring the journey is protected.
+                </p>
+                <a href="#pillars" class="inline-block px-8 py-3 text-lg font-semibold bg-yellow-500 text-indigo-900 rounded-full hover:bg-yellow-400 transition duration-300 shadow-xl transform hover:scale-105">
+                    Explore Our Pillars
+                </a>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="py-16 sm:py-24 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center text-indigo-700 mb-10">About Chambliss Group International</h2>
+                
+                <div class="bg-gray-50 p-6 sm:p-10 rounded-xl shadow-lg border-l-4 border-yellow-500">
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        Chambliss Group International is a dynamic and visionary consortium of companies dedicated to empowering communities and safeguarding aspirations. We operate at the intersection of economic vitality and personal security, believing that true progress requires both financial opportunity and a foundation of safety. Our strategic subsidiaries, while serving distinct sectors, are unified by a core commitment to integrity, excellence, and transformative impact.
+                    </p>
+                    <p class="text-lg text-gray-600 leading-relaxed mt-4 font-semibold">
+                        Under the guiding principle of "Empowerment through Security and Prosperity," we build bridges to opportunity while ensuring the journey is protected.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Team Section (Leadership) -->
+        <section id="team" class="py-16 sm:py-24 bg-gray-100">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center text-indigo-700 mb-12">Leadership: Vision at the Helm</h2>
+                
+                <div class="flex flex-col md:flex-row gap-8 items-center bg-white p-8 rounded-xl shadow-lg">
+                    <div class="flex-shrink-0">
+                        <!-- CEO Image (Uploaded) -->
+                        <img src="{{uploaded_file_url('CEO.jpeg')}}" 
+                            onerror="this.onerror=null; this.src='https://placehold.co/180x180/1e3a8a/ffffff?text=Simone+Chambliss+CEO';" 
+                            alt="Photo of Mrs. Simone Chambliss, CEO" 
+                            class="rounded-full shadow-xl w-44 h-44 object-cover object-top border-4 border-yellow-500">
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-indigo-700 mb-2">Mrs. Simone Chambliss</h3>
+                        <p class="text-indigo-600 font-semibold mb-4">Founder and CEO, Chambliss Group International</p>
+                        <p class="text-gray-600 leading-relaxed">
+                            The Group is steered by its Founder and CEO, Mrs. Simone Chambliss. A leader of profound insight and strategic acumen, she built the Group on the conviction that responsible enterprise must address fundamental human needs. 
+                        </p>
+                        <p class="text-gray-600 leading-relaxed mt-3 italic">
+                            Her philosophy of “purpose-driven diversification” ensures operational excellence and unwavering ethical standards across all Group endeavors.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Pillars Section (Subsidiaries) -->
+        <section id="pillars" class="py-16 sm:py-24 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center text-indigo-700 mb-12">Our Pillars of Strength</h2>
+                
+                <div class="space-y-12">
+                    <!-- Pillar 1: Abba Microfinance Bank -->
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-xl border-t-8 border-indigo-500">
+                        <h3 class="text-2xl font-bold text-indigo-600 mb-4 flex items-center">
+                            <svg class="w-6 h-6 mr-3 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m0 0h2m-2 0h-2m2 0v2a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2zm7-2h.01"></path></svg>
+                            1. Abba Microfinance Bank
+                        </h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Abba Microfinance Bank is the economic engine of our mission. We go beyond traditional banking to provide accessible financial solutions, microloans, and business advisory services to entrepreneurs, small business owners, and individuals. Our goal is to fuel economic growth from the ground up, unlocking potential and fostering financial independence within the communities we serve.
+                        </p>
+                        <ul class="mt-4 list-disc list-inside text-indigo-700 font-medium">
+                            <li>Accessible Financial Solutions</li>
+                            <li>Microloans for Small Businesses</li>
+                            <li>Business Advisory and Mentorship</li>
+                        </ul>
+                    </div>
+
+                    <!-- Pillar 2: Life Guard Security (Enhanced with Images) -->
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-xl border-t-8 border-yellow-500">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-2xl font-bold text-indigo-600 flex items-center">
+                                <svg class="w-6 h-6 mr-3 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2l4-4m5.618-4.103A.986.986 0 0020 4a.986.986 0 00-.916-2.103M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                2. Life Guard Security
+                            </h3>
+                            <!-- Life Guard Logo -->
+                            <img src="{{uploaded_file_url('Life Guard Logo.png')}}" 
+                                onerror="this.onerror=null; this.style.display='none';" 
+                                alt="Life Guard Security Logo" 
+                                class="w-16 h-16 object-contain">
+                        </div>
+                        
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            Life Guard Security is the embodiment of our commitment to safety. We provide premier, **technology-driven** security services and solutions for residential, corporate, and institutional clients, ensuring peace of mind.
+                        </p>
+
+                        <!-- Technology Showcase -->
+                        <div class="grid md:grid-cols-2 gap-6 items-center mt-6">
+                            <!-- Feature 1: Solar Power & AI Detection -->
+                            <div class="text-center">
+                                <img src="{{uploaded_file_url('camera 4.jpg')}}" 
+                                     onerror="this.onerror=null; this.src='https://placehold.co/300x200/cccccc/333333?text=High-Tech+Security';"
+                                     alt="Security Camera with AI detection" 
+                                     class="rounded-lg shadow-md mx-auto mb-3 object-cover w-full h-auto">
+                                <p class="font-semibold text-indigo-700">AI Detection & Ultra HD Monitoring</p>
+                                <p class="text-sm text-gray-500">Leveraging smart systems for precise threat identification and 8MP resolution surveillance.</p>
+                            </div>
+                            
+                            <!-- Feature 2: All-Day Power -->
+                            <div class="text-center">
+                                <img src="{{uploaded_file_url('camera 1.jpg')}}" 
+                                     onerror="this.onerror=null; this.src='https://placehold.co/300x200/cccccc/333333?text=Solar+Power+Solutions';"
+                                     alt="Solar powered security camera" 
+                                     class="rounded-lg shadow-md mx-auto mb-3 object-cover w-full h-auto">
+                                <p class="font-semibold text-indigo-700">Uninterrupted Solar Energy</p>
+                                <p class="text-sm text-gray-500">Eco-friendly and reliable solar solutions ensure 24/7 protection without the need for constant charging.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Synergy Callout -->
+                <div class="mt-12 text-center bg-indigo-700 p-8 rounded-xl shadow-xl text-white">
+                    <h4 class="text-2xl font-bold mb-3 text-yellow-400">The Synergy: A Virtuous Cycle</h4>
+                    <p class="text-lg">
+                        This integrated approach ensures Microfinance empowers individuals to build businesses and secure assets, while Security provides the necessary environment for those livelihoods to thrive.
+                    </p>
+                </div>
+                
+                <!-- Core Values -->
+                <div class="mt-16">
+                    <h3 class="text-3xl font-bold text-center text-indigo-700 mb-8">Our Core Values</h3>
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="p-4 bg-gray-50 rounded-lg shadow-md border-b-2 border-yellow-500 text-center"><h4 class="font-semibold text-indigo-600">Integrity</h4><p class="text-sm">Transparency and highest ethical standards.</p></div>
+                        <div class="p-4 bg-gray-50 rounded-lg shadow-md border-b-2 border-yellow-500 text-center"><h4 class="font-semibold text-indigo-600">Innovation</h4><p class="text-sm">Leveraging technology for superior services.</p></div>
+                        <div class="p-4 bg-gray-50 rounded-lg shadow-md border-b-2 border-yellow-500 text-center"><h4 class="font-semibold text-indigo-600">Empowerment</h4><p class="text-sm">Creating opportunities that enhance lives.</p></div>
+                        <div class="p-4 bg-gray-50 rounded-lg shadow-md border-b-2 border-yellow-500 text-center"><h4 class="font-semibold text-indigo-600">Reliability</h4><p class="text-sm">Delivering on promises with consistency.</p></div>
+                        <div class="p-4 bg-gray-50 rounded-lg shadow-md border-b-2 border-yellow-500 text-center"><h4 class="font-semibold text-indigo-600">Synergy</h4><p class="text-sm">Collaboration across the Group.</p></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact & Vision Section (CTA) -->
+        <section id="contact" class="py-20 bg-indigo-900 text-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-bold mb-6 text-yellow-400">Vision & Get in Touch</h2>
+                <p class="text-xl font-light mb-8">
+                    Chambliss Group International is poised for thoughtful growth, dedicated to building a legacy where economic empowerment and physical security are interdependent pillars of a prosperous, thriving society.
+                </p>
+                <p class="text-lg mb-8">
+                    We invite you to learn more about our individual subsidiaries and discover how the Chambliss Group International is building a more secure and empowered future.
+                </p>
+                <!-- NOTE: Replace with actual contact information or form link if available -->
+                <a href="mailto:info@chamblissgroup.com" class="inline-block px-10 py-4 text-lg font-bold bg-yellow-500 text-indigo-900 rounded-full hover:bg-yellow-400 transition duration-300 shadow-2xl transform hover:scale-105">
+                    Contact Our Team Today
+                </a>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-gray-400 py-6">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
+                <p>&copy; 2025 Chambliss Group International. All Rights Reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const sidebar = document.getElementById('sidebar');
+        const menuButton = document.getElementById('menu-button');
+        const backdrop = document.getElementById('backdrop');
+        
+        // Function to toggle the sidebar on mobile
+        function toggleSidebar() {
+            sidebar.classList.toggle('-translate-x-full');
+            backdrop.classList.toggle('opacity-0');
+            backdrop.classList.toggle('opacity-50');
+            backdrop.classList.toggle('pointer-events-none');
+        }
+
+        menuButton.addEventListener('click', toggleSidebar);
+        backdrop.addEventListener('click', toggleSidebar);
+
+        // Close sidebar when a link is clicked (on mobile)
+        document.querySelectorAll('.sidebar-link').forEach(link => {
+            link.addEventListener('click', function (e) {
+                // Smooth scroll to the target section
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close sidebar if on mobile
+                if (window.innerWidth < 1024) {
+                    toggleSidebar();
+                }
+
+                // Update active link styling
+                document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('bg-indigo-800'));
+                this.classList.add('bg-indigo-800');
+            });
+        });
+
+        // Set initial active link based on URL hash if present
+        window.addEventListener('load', () => {
+            const hash = window.location.hash || '#home';
+            document.querySelector(`.sidebar-link[href="${hash}"]`)?.classList.add('bg-indigo-800');
+        });
+    </script>
+</body>
+</html>
